@@ -15,83 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- *  Video Player filtering
+ * File only retained to prevent fatal errors in code that tries to require/include this.
  *
- *  This filter generate a video player
- *
- * @package    filter
- * @subpackage miroplayer
- * @copyright  2021 Samuel Calegari <samuel.calegari@univ-perp.fr>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @todo MDL-82708 delete this file as part of Moodle 6.0 development.
+ * @deprecated This file is no longer required in Moodle 4.5+.
+ * @package filter_miroplayer
+ * @copyright 2025 Samuel Calegari <samuel.calegari@univ-perp.fr>
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
 
-class filter_miroplayer extends moodle_text_filter{
-
-    public function filter($text, array $options = array()) {
-
-        if (!is_string($text) or empty($text)) {
-            return $text;
-        }
-
-        if (strpos($text, '[player') === false) {
-            return $text;
-        }
-
-        $text = preg_replace_callback(
-            "/\[[^\[]*player[^\]]*\]/",
-            array( &$this, "gen_player" ),
-            $text);
-
-
-        return $text;
-    }
-
-    private function gen_player($m) {
-
-        $html = '';
-
-        $regex = '/(\w+)\s*=\s*"(.*?)"/';
-
-        preg_match_all($regex, $m[0], $matches);
-
-        $options= array();
-        for ($i = 0; $i < count($matches[1]); $i++)
-            $options[$matches[1][$i]] = $matches[2][$i];
-
-        $ratio = @isset($options['ratio']) ? $options['ratio'] : '16by9';
-        $title = @isset($options['title']) ? $options['title'] : '';
-        $video = $options['video'];
-
-        if(strpos($video, 'youtube-')!== false)
-            $url = '//www.youtube.com/embed/' . str_replace('youtube-','',$video)  . '?rel=0';
-        elseif(strpos($video, 'dailymotion-')!== false)
-            $url = '//www.dailymotion.com/embed/video/' . str_replace('dailymotion-','',$video);
-        elseif(strpos($video, 'vimeo-')!== false)
-            $url = '//player.vimeo.com/video/' . str_replace('vimeo-','',$video);
-        elseif(strpos($video, 'upvdstream-')!== false)
-            $url = 'https://upvdstream.univ-perp.fr/video/player.php?id=' . str_replace('upvdstream-','',$video) . '&cover=cover2';
-        elseif(strpos($video, 'mediaserver-')!== false)
-            $url = 'https://mediaserver.univ-perp.fr/permalink/' . str_replace('mediaserver-','',$video) . '/iframe/';
-        else return $html;
-
-        $html .= '<div class="container">';
-        $html .= '<div class="row">';
-        $html .= '<div class="col-sm-12">';
-        $html .= '<div class="card text-center">';
-        $html .= '<div class="card-block">';
-        $html .= '<div class="embed-responsive embed-responsive-' . $ratio . '">';
-        $html .= '<iframe class="embed-responsive-item" title="' . $title . '" src="' . $url . '" allowfullscreen></iframe>';
-        $html .= '</div>';
-        $html .= '</div>';
-        if($title!="")
-            $html .= '<div class="card-footer text-muted">' . $title . '</div>';
-        $html .= '</div>';
-        $html .= '</div>';
-        $html .= '</div>';
-        $html .= '</div>';
-
-        return $html;
-    }
-}
+debugging('This file is no longer required in Moodle 4.5+. Please do not include/require it.', DEBUG_DEVELOPER);

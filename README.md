@@ -2,7 +2,7 @@
 
 ## Current version ##
 
-alpha-1.1
+1.2
 
 ## Features ##
 - Display a responsive Media Player (Youtube, Dailymotion, Vimeo, and UPVD Stream)
@@ -17,7 +17,7 @@ Copy files into the following directory **/filter/miroplayer/** and visit **/adm
 
 ## Requirement ##
 
-Moodle 3.1 or greater / Bootstrap 4
+Moodle 4.5 or greater / Bootstrap 5
 
 ## Usage ##
 

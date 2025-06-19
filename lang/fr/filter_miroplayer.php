@@ -15,8 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
-* @package   filtermiroplayer
-* @copyright 2018 Moodle Pty Ltd (http://moodle.com)
+* @package   filter_miroplayer
+* @copyright 2025 Moodle Pty Ltd (http://moodle.com)
 * @author    Samuel Calegari
 * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 */

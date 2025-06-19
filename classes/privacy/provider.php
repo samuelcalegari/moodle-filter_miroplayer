@@ -18,7 +18,7 @@
  * Privacy Subsystem implementation for filter_miroplayer.
  *
  * @package    filter_miroplayer
- * @copyright  2021 Samuel Calegari <samuel.calegari@univ-perp.fr>
+ * @copyright  2025 Samuel Calegari <samuel.calegari@univ-perp.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -29,7 +29,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Privacy Subsystem for filter_miromiroplayer implementing null_provider.
  *
- * @copyright  2021 Samuel Calegari <samuel.calegari@univ-perp.fr>
+ * @copyright  2025 Samuel Calegari <samuel.calegari@univ-perp.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class provider implements \core_privacy\local\metadata\null_provider {
